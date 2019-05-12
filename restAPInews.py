@@ -7,8 +7,8 @@ def req(county='ru', pageSize='20', page='1', TOKEN=None):
                         f'https://newsapi.org/v2/top-headlines?'
                         f'country={country}&'
                         f'pageSize={pageSize}&'
-                        f'page = {page}&'
-                        f'apiKey = {TOKEN}'
+                        f'page={page}&'
+                        f'apiKey={TOKEN}'
     )
 
 
@@ -18,8 +18,8 @@ def reqCat(category, country='ru', pageSize=20, page=1, TOKEN=None):
                         f'country={country}&'
                         f'category={category}&'
                         f'pageSize={pageSize}&'
-                        f'page = {page}&'
-                        f'apiKey = {TOKEN}'
+                        f'page={page}&'
+                        f'apiKey={TOKEN}'
     )
 
 
@@ -29,8 +29,8 @@ def reqKeyW(q, country='ru', pageSize=20, page=1, TOKEN=None):
                         f'q={q}&'
                         f'country={country}&'
                         f'pageSize={pageSize}&'
-                        f'page = {page}&'
-                        f'apiKey = {TOKEN}'
+                        f'page={page}&'
+                        f'apiKey={TOKEN}'
     )
 
 TOKEN = '34c8180e516a42159122bb8040ce0511'
