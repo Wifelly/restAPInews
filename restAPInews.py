@@ -41,8 +41,6 @@ if (debug):
     language = 'ru'
     pageSize = '20'
     page = '1'
-    q = 'Путин'
-    category = 'general'
 else:
     print('country: ',end ='')
     country = input()
@@ -62,7 +60,7 @@ while(cont):
     print('\nenter mode:\n'
         '1 - request\n'
         '2 - request category\n'
-        '3 - request key wrd\n'
+        '3 - request key wrd'
         )
     mode = input()
     if mode == '1':
@@ -70,6 +68,7 @@ while(cont):
     elif mode == '2':
         response = reqCat(category, country, pageSize, page, TOKEN)
     elif mode == '3':
+        q = 'Путин'
         response = reqKeyW(q, country, pageSize, page, TOKEN)
     pprint.pprint(response.json())
     print('\ncont?\n y/n')
