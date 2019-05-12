@@ -56,7 +56,6 @@ while(cont):
         3 - request key wrd'''
         )
     mode = input()
-    
     if mode == '1':
         response = req(country, pageSize, page, TOKEN)
     elif mode == '2':
@@ -64,3 +63,11 @@ while(cont):
     elif mode == '3':
         response = reqKeyW(q, country, pageSize, page, TOKEN)
     pprint.pprint(response.json())
+    print(
+        '''
+        cont?
+        y/n'''
+    )
+    temp_cont = input()
+    if temp_cont == 'n':
+        cont = False
