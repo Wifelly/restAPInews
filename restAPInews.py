@@ -44,11 +44,17 @@ if (debug):
     q = 'Путин'
     category = 'general'
 else:
+    print('country: ',end ='')
     country = input()
+    print('language: ',end ='')
     language = input()
+    print('pageSize: ',end ='')
     pageSize = input()
+    print('page: ',end ='')
     page = input()
+    print('q: ',end ='')
     q = input()
+    print('category: ',end ='')
     category = input()
 
 cont = True
