@@ -75,3 +75,5 @@ while(cont):
     temp_cont = input()
     if temp_cont == 'n':
         cont = False
+
+print('\nexiting...\n')
