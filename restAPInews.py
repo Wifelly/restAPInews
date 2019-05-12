@@ -1,43 +1,34 @@
-# Реализовать набор функций для работы с API:
-# - Получить последние публикации по списку категорий.
-# - Получить последние публикации по списку ключевых слов.
-# - Поиск публикаций по запросу.
-
-# Функции должны предоставлять возможность пагинации (указания размера и номера страницы) и выбора страны/языка.
-
-# Решение должно быть оформлено в виде репозитория на GitHub,
-# в ответе нужно прикрепить ссылку на репозиторий.
-
 debug = True
 
 import requests, pprint
 
-def reqwCat(mode, country, TOKEN, pageSize, page):
+def reqwCat(mode, country, category, TOKEN, pageSize, page):
     return requests.get(
     f'https://newsapi.org/v2/{mode}?'
-    f'q={q}'
     f'country={country}&'
+    f'category={category}&'
     f'pageSize={pageSize}&'
-    f'page = {page}'
-    f'apiKey={TOKEN}&'
+    f'page = {page}&'
+    f'apiKey = {TOKEN}'
     ) 
 
-def reqwKeyW(mode, country, TOKEN, pageSize, page, q):
+def reqwKeyW(mode, q, country, TOKEN, pageSize, page):
     return requests.get(
     f'https://newsapi.org/v2/{mode}?'
+    f'q={q}&'
     f'country={country}&'
     f'pageSize={pageSize}&'
-    f'page = {page}'
-    f'apiKey={TOKEN}&'
+    f'page = {page}&'
+    f'apiKey = {TOKEN}'
     ) 
 
-def reqw():
+def reqw(mode, county, pageSize, page, TOKEN):
     return requests.get(
     f'https://newsapi.org/v2/{mode}?'
     f'country={country}&'
     f'pageSize={pageSize}&'
-    f'page = {page}'
-    f'apiKey={TOKEN}&'
+    f'page = {page}&'
+    f'apiKey = {TOKEN}'
     ) 
 
 TOKEN = '34c8180e516a42159122bb8040ce0511'
