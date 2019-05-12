@@ -2,6 +2,15 @@ debug = True
 
 import requests, pprint
 
+def reqw(mode, county, pageSize, page, TOKEN):
+    return requests.get(
+    f'https://newsapi.org/v2/{mode}?'
+    f'country={country}&'
+    f'pageSize={pageSize}&'
+    f'page = {page}&'
+    f'apiKey = {TOKEN}'
+    ) 
+
 def reqwCat(mode, country, category, TOKEN, pageSize, page):
     return requests.get(
     f'https://newsapi.org/v2/{mode}?'
@@ -22,15 +31,6 @@ def reqwKeyW(mode, q, country, TOKEN, pageSize, page):
     f'apiKey = {TOKEN}'
     ) 
 
-def reqw(mode, county, pageSize, page, TOKEN):
-    return requests.get(
-    f'https://newsapi.org/v2/{mode}?'
-    f'country={country}&'
-    f'pageSize={pageSize}&'
-    f'page = {page}&'
-    f'apiKey = {TOKEN}'
-    ) 
-
 TOKEN = '34c8180e516a42159122bb8040ce0511'
 if (debug):
     country = 'ru'
@@ -38,14 +38,15 @@ if (debug):
     pageSize = '20'
     page = '1'
     q = 'Путин'
+    category = 'general'
 else :
     country = input()
     language = input()
     pageSize = input()  
     page = input()
     q = input()
+    category = input()
 mode = 'top-headlines'
-# mode = 'everything'
 
 response = reqwKeyW(mode, country, TOKEN, pageSize, page, q)
 
