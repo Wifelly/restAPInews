@@ -12,6 +12,33 @@ debug = True
 
 import requests, pprint
 
+def reqwCat(mode, country, TOKEN, pageSize, page):
+    return requests.get(
+    f'https://newsapi.org/v2/{mode}?'
+    f'country={country}&'
+    f'apiKey={TOKEN}&'
+    f'pageSize={pageSize}&'
+    f'page = {page}'
+    ) 
+
+def reqwKeyW():
+    return requests.get(
+    f'https://newsapi.org/v2/{mode}?'
+    f'country={country}&'
+    f'apiKey={TOKEN}&'
+    f'pageSize={pageSize}&'
+    f'page = {page}'
+    ) 
+
+def reqw():
+    return requests.get(
+    f'https://newsapi.org/v2/{mode}?'
+    f'country={country}&'
+    f'apiKey={TOKEN}&'
+    f'pageSize={pageSize}&'
+    f'page = {page}'
+    ) 
+
 TOKEN = '34c8180e516a42159122bb8040ce0511'
 if (debug):
     country = 'ru'
@@ -25,18 +52,13 @@ else :
     page = input()
 mode = 'top-headlines'
 # mode = 'everything'
-
-
 # request = (
 #     f'https://newsapi.org/v2/{mode}?'
 #     f'country={country}&'
 #     f'apiKey={TOKEN}&'
 #     f'pageSize={pageSize}'
 # )
-response = requests.get(
-    f'https://newsapi.org/v2/{mode}?'
-    f'country={country}&'
-    f'apiKey={TOKEN}&'
-    f'pageSize={pageSize}'
-    ) 
+
+response = reqwCat(mode, country, TOKEN, pageSize, page)
+
 pprint.pprint(response.json())
