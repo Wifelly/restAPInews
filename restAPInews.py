@@ -1,5 +1,3 @@
-debug = True
-
 import requests, pprint
 
 def req(county = 'ru', pageSize = '20', page = '1', TOKEN = None):
@@ -32,6 +30,8 @@ def reqKeyW(q, country = 'ru', pageSize = 20, page = 1, TOKEN = None):
     ) 
 
 TOKEN = '34c8180e516a42159122bb8040ce0511'
+debug = True
+
 if (debug):
     country = 'ru'
     language = 'ru'
@@ -50,12 +50,17 @@ else :
 cont = True
 while(cont):
     print(
-        'enter mode: '
-        '1 - request'
-        '2 - request category'
-        '3 - request key wrd'
+        '''enter mode: 
+        1 - request
+        2 - request category
+        3 - request key wrd'''
         )
-    response = reqKeyW(country, TOKEN, pageSize, page, q)
+    mode = input()
+    
+    if mode == '1':
+        response = req(country, pageSize, page, TOKEN)
+    elif mode == '2':
+        response = reqCat(category, country, pageSize, page, TOKEN)
+    elif mode == '3':
+        response = reqKeyW(q, country, pageSize, page, TOKEN)
     pprint.pprint(response.json())
-
-
