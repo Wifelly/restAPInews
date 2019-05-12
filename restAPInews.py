@@ -53,11 +53,10 @@ else:
 
 cont = True
 while(cont):
-    print(
-        '''enter mode:
-        1 - request
-        2 - request category
-        3 - request key wrd'''
+    print('enter mode:\n'
+        '1 - request\n'
+        '2 - request category\n'
+        '3 - request key wrd\n'
         )
     mode = input()
     if mode == '1':
@@ -67,11 +66,7 @@ while(cont):
     elif mode == '3':
         response = reqKeyW(q, country, pageSize, page, TOKEN)
     pprint.pprint(response.json())
-    print(
-        '''
-        cont?
-        y/n'''
-    )
+    print('cont?\n y/n')
     temp_cont = input()
     if temp_cont == 'n':
         cont = False
